@@ -1,0 +1,16 @@
+
+<section class="course">
+    <h1>Course We Offer</h1>
+    <p>
+      Our student loans to study in the USA & Canada don't require a cosigner
+      or credit history.
+    </p>
+    <div class="row" >
+      <div class="course-col" *ngFor ="let section of fcourse">
+        <h3>{{section.Title}}</h3>
+        <p>
+          {{section.Content}}
+        </p>
+      </div>
+    </div>
+  </section>

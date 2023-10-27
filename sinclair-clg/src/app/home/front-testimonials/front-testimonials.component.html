@@ -1,0 +1,21 @@
+<section class="testimonials">
+    <h1>What Our Student Says</h1>
+    <p>
+      Im an upcoming freshman at Sinclair, but the experience I have had so
+      far has been great.
+    </p>
+    <div class="row">
+      <div class="testimonial-col" *ngFor="let testimonials of review">
+        <img [src]="testimonials.url"/>
+        <div>
+          <p>{{testimonials.content}}</p>
+          <h3>{{testimonials.head}}</h3>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-regular fa-star-half-stroke"></i>
+        </div>
+      </div>
+    </div>
+  </section>

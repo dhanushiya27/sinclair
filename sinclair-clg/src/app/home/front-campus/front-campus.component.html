@@ -1,0 +1,17 @@
+<section class="campus">
+    <h1>Our Global Campus</h1>
+    <p>
+      Plan your Virtual Sinclair Visit to meet with a member of our Admissions
+      Team! Learn more about our exceptional programs and services, <br />
+      discover why Sinclair is a great choice for you, and find out how to get
+      started.
+    </p>
+    <div class="row">
+      <div class="campus-col" *ngFor="let layer of campus">
+        <img [src]="layer.ImagePath"/>
+        <div class="layer">
+          <h3>{{layer.Heading}}</h3>
+        </div>
+      </div>
+    </div>
+  </section>

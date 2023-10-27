@@ -1,0 +1,42 @@
+<section class="header" *ngIf="isHomePage">
+    <nav>
+      <a routerLink="/"><img src="assets/images/downloadff.png"/></a>
+      <i class="fas fa-bars" (click)="toggleMenu()" *ngIf="!isMenuOpen"></i>
+      <div class="nav-links" id="navlinks" [ngClass]="{'show-mobile-menu': isMenuOpen}">
+        <i class="fas fa-xmark" (click)="closeMenu()"></i>
+        <ul> 
+          <li><a routerLink="/home">HOME</a></li>
+          <li><a routerLink="/about">ABOUT</a></li>
+          <li><a routerLink="/course">COURSE</a></li>
+          <li><a routerLink="/blog">BLOG</a></li>
+          <li><a routerLink="/signup">SIGN UP</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="text-box">
+      <h1>#1 University in U.S for Students</h1>
+      <p>
+        The Sinclair, Qualified professionals are in demand throughout the
+        area. Explore Sinclair programs that prepare you for a career with endless opportunity. Guaranteed clinical placements.
+      </p>
+      <a href="https://sinclair.edu/" class="hero-btn" target="_blank">Visit Us To Know More</a>
+    </div>
+  </section>
+  <section class="sub-header" *ngIf="!isHomePage">
+    <nav>
+      <a routerLink="/"><img src="../../../assets/images/downloadff.png"/></a>
+      <i class="fas fa-bars" (click)="toggleMenu()" *ngIf="!isMenuOpen"></i>
+      <div class="nav-links" id="navlinks" [ngClass]="{'show-mobile-menu': isMenuOpen}">
+        <i class="fas fa-xmark" (click)="closeMenu()"></i>
+        <ul> 
+          <li><a routerLink="/home">HOME</a></li>
+          <li><a routerLink="/about">ABOUT</a>
+          </li>
+          <li><a routerLink="/course">COURSE</a></li>
+          <li><a routerLink="/blog">BLOG</a></li>
+          <li><a routerLink="/signup">SIGN UP</a></li>
+        </ul>
+      </div>
+    </nav> 
+  </section>
+  

@@ -1,0 +1,22 @@
+<section class="carousel">
+    <h1>Sinclair News</h1>
+    <div class="centered-container">
+      <div class="centered-content">
+        <p-carousel [value]="cards" [numVisible]="3" [circular]="true" [autoplayInterval]="3000"  [showIndicators]="false" [style]="{'width': '100%'}">
+          <ng-template let-item pTemplate="carouselItem">
+            <div class="card">
+              <div class="card-body">
+                <a [href]="item.linkUrl" class="card-link" target="_blank">
+                <img [src]="item.imageUrl"  class="card-image">
+                </a>
+                <strong class="card-title">{{ item.title }}</strong>
+                <p class="card-text">{{ item.content }}</p>
+              </div> 
+            </div>
+          </ng-template>
+        </p-carousel>
+      </div>
+    </div>
+    </section>
+    
+    

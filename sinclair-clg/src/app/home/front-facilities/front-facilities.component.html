@@ -1,0 +1,17 @@
+<section class="facilities">
+    <h1>Our Facilities</h1>
+    <p>
+      If you are planning to continue your education after Sinclair, check out
+      our Virtual Transfer 101 Series to learn more about our partner
+      universities.
+    </p>
+    <div class="row">
+      <div class="facilities-col" *ngFor="let facilities of details">
+        <img [src]="facilities.imageurl"/>
+        <h3>{{facilities.heading}}</h3>
+        <p>
+          {{facilities.para}}
+        </p>
+      </div>
+    </div>
+  </section>

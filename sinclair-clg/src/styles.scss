@@ -1,0 +1,58 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'primeng/resources/primeng.min.css';
+@import 'primeng/resources/themes/saga-blue/theme.css';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+.mb-3 p-multiselect.coursedropdown .p-multiSelect {
+    width: 550px !important;
+    margin-left: 40px;
+}
+.p-multiSelect.coursedropdown .p-multiSelect .p-multiSelect-label {
+    width: 400px;
+}
+.p-multiselect.p-component {
+    width: 400px;
+}
+.card.flex.justify-content-center {
+    background: transparent;
+    border: none;
+}
+.p-multiselect-filter-icon {
+    position: absolute;
+    top: 27%;
+    margin-top:0px;
+  }
+  ul.p-multiselect-items.p-component.ng-star-inserted {
+    margin-left: -30px;
+}
+.p-multiselect-filter-container.ng-star-inserted {
+    margin-left: 5px;
+}
+.p-multiselect-panel.p-component.ng-star-inserted {
+    /* margin: 8px; */
+    padding: 7px;
+}
+span.ng-star-inserted {
+    margin-left: 10px;
+}
+.ng-trigger.ng-trigger-animation.ng-tns-c647991600-0.p-dialog.p-dynamic-dialog.p-component.ng-star-inserted {
+    max-width: 40%;
+    height: 55%;
+}
+span#pn_id_2_header_title {
+    margin: 28px;
+    color:#f44336;
+}
+.ng-tns-c640837940-3.ng-trigger.ng-trigger-messageState.p-toast-message-success.p-toast-message {
+    position: absolute;
+    right: 143%;
+    width: 100%;
+    margin-top: 85%;
+    padding: 20px;
+}
