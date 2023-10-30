@@ -1,0 +1,68 @@
+button#mybtn{
+    background: #f44336;
+    color: #fff;
+    padding: 12px 34px;
+    font-size: 13px;
+    position: relative;
+    cursor: pointer;
+    border: 1px solid #f44336;
+    margin-left: 12px;
+    }
+    .row {
+    margin-top: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    display: flex;
+    justify-content: space-between;
+    }
+    h1 {
+    font-size: 26px;
+    font-weight: 600;
+    color: #fff;
+    }
+    p {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+    }
+    .about-us {
+    width: 100%;
+    margin: auto;
+    padding-top: 80px;
+    padding-bottom: 50px;
+    background-color: #072f5f;
+    }
+    .about-col {
+    flex-basis: 48%;
+    padding: 30px 2px;
+    }
+    .swing {
+    background-color: transparent;
+    animation: swing ease-in-out 1s infinite alternate;
+    transform-origin: right center;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    } 
+    .about-col img {
+       width: 100%;
+    }
+    .about-col h1{
+      padding-top: 0;
+    }
+    .about col p{
+      padding: 15px 0 25px;
+    }
+     @keyframes swing {
+    0% {
+      transform: rotate(3deg);
+    }
+    100% {
+      transform: rotate(-3deg);
+    }
+    } 
+    @media(max-width:700px){
+      .row{
+        flex-direction: column;
+      }
+    } 

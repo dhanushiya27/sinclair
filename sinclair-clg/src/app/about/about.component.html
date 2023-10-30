@@ -1,0 +1,19 @@
+<section class="about-us">
+    <div class="row">
+      <div class="about-col">
+        <h1>{{ about.Title }}</h1>
+        <p>{{ about.para }}
+          <span *ngIf="showDetails== false" id="dots">....</span>
+          <span *ngIf="showDetails == true" id="more">{{ about.extpara }}<br><br>{{about.nextpara}}</span>
+        </p>
+        <button (click)="myDetails()" class="hero-btn" id="mybtn">
+          {{ showDetails ? 'Read Less' : 'Read More' }}
+        </button>
+      </div>
+      <div class="about-col">
+        <div class="swing">
+          <img [src]="about.img" />
+        </div>
+      </div>
+    </div> 
+  </section>
