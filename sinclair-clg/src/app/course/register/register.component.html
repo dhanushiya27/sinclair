@@ -1,0 +1,96 @@
+<div class="bodyy">
+    <p-toast (onClose)="handleToastClose()"></p-toast>
+    <div [ngClass]="{'overlay': overlayVisible}" class="overlay"></div>
+    <div class="container">
+      <h1>Enroll Your Course</h1>
+      <p>We would love to provide these courses and help you succeed.Feel free to get in touch with us. </p>
+      <div class="contact-box">
+        <div class="contact-left">
+          <h3>Enroll Your Course</h3>
+          <form id="idform" [formGroup]="form" (submit)="saveFormData()">
+            <div class="input-row">
+              <div class="input-group">
+                <label for="fname">First Name *</label>
+                <input type="text" id="fname" formControlName="fname" placeholder="Enter Your First Name" />
+                <div *ngIf="form.controls['fname'].hasError('required') && form.controls['fname'].touched" class="error-message">
+                   First Name is required.
+                </div>
+              </div>
+              <div class="input-group">
+                <label for="lname">Last Name *</label>
+                <input type="text" id="lname" formControlName="lname" placeholder="Enter Your Last Name"/>
+                <div *ngIf="form.controls['lname'].hasError('required') && form.controls['lname'].touched" class="error-message">
+                  Last Name is required.
+                </div>
+              </div>
+            </div>
+            <div class="input-row">
+              <div class="input-group">
+                <label for="std">Student Id *</label>
+                <input type="number"  id="std" formControlName="std" placeholder="Enter Std-id" class="no-spinners"  />
+                <div *ngIf="form.controls['std'].hasError('required') && form.controls['std'].touched" class="error-message">
+                  std-id is required.
+                </div>
+              </div>
+              <div class="input-group">
+                <label for="std_email">Student Email *</label>
+                <input type="email" id="std_email" formControlName="std_email" placeholder="Enter Std-email" />
+                <div *ngIf="form.controls['std_email'].hasError('required') && form.controls['std_email'].touched" class="error-message">
+                  Std-email is required.
+                </div>
+                <div *ngIf="form.controls['std_email'].hasError('email') && form.controls['std_email'].touched" class="error-message">
+                  Invalid email format.
+                </div>
+              </div>
+            </div>
+            <div class="input-row">
+              <div class="input-group">
+                <label for="doj">Date of Joining *</label>
+                <input type="date" id="doj" formControlName="doj" placeholder="Enter Std-email"/>
+                <div *ngIf="form.controls['doj'].hasError('required') && form.controls['doj'].touched" class="error-message">
+                  Date Of joining is required.
+                </div>
+              </div>
+              <div class="input-group">
+                <label for="ph_no">Phone *</label>
+                <input type="number" class="no-spinners"  id="ph_no" formControlName="ph_no" placeholder="Enter Your Number"  />
+                <div *ngIf="form.controls['ph_no'].hasError('required') && form.controls['ph_no'].touched " class="error-message">
+                  Phone number is required.
+                </div>
+                <div *ngIf="form.controls['ph_no'].hasError('pattern') && form.controls['ph_no'].touched " class="error-message">
+                  Phone number should be 10 digits only
+                </div>
+              </div>
+            </div>
+            <div class="input-row">
+              <div class="input-group">
+                <label for="gender">Gender *</label> <br />
+                <input type="radio" id="gender" name="gender" formControlName="gender" value="male" /> Male
+                <input type="radio" id="gender" name="gender" formControlName="gender" value="female" /> Female
+              </div>
+              <div class="input-group">
+                <label for="lang">known Language (optional)</label><br />
+                <input type="checkbox" formControlName="lang" /> HTML
+                <input type="checkbox" formControlName="lang" /> CSS
+                <input type="checkbox" formControlName="lang" /> JS
+              </div>
+            </div>
+            <div class="input-row">
+              <label>Course</label><br />
+              <div class="mb-3">
+                <p-multiSelect class="coursedropdown" [options]="courses" formControlName="courses" optionLabel="name" ></p-multiSelect>
+              </div>
+            </div>
+            <button type="submit"  class="button" [disabled]="form.invalid" *ngIf="!editForm"  (click)="showSuccess()" >Enroll</button>
+            <button type="button" (click)="saveEditedData()" *ngIf="editForm">Update</button>
+  
+          </form>
+        </div>
+        <div class="contact-right">
+          <img src="assets/images/regpic2.jpg" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-register-data [formData]="formValues" [courses]="courses" (removeItemFromParent)="removeItemFromChild($event)" (editItemEvent)="editItem($event)"></app-register-data>
+  <!-- formData  is referance variable-->

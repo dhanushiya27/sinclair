@@ -24,5 +24,6 @@ export class HeaderComponent {
     { link: '/about', text: 'ABOUT' },
     { link: '/course', text: 'COURSE' },
     { link: '/blog', text: 'BLOG' },
+    { link: '/signup', text: 'SIGNUP' },
   ];
 }

@@ -1,0 +1,29 @@
+.tablee{
+    margin: 50px;   
+} 
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+tbody, td, tfoot, th, thead, tr{
+    border: 2px solid;
+    text-align: center;
+}
+.mb-3{
+    padding-top: 30px;
+}
+span{
+    margin-left: 9.7%;
+}
+.result{
+    color: white;
+    margin: 15px;
+}
+
+.fa-pencil,.fa-xmark{
+    padding: 0 10px;
+    cursor: pointer;
+}
+.data{
+    background-color: #0c243c;
+}

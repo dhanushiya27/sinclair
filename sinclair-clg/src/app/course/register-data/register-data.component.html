@@ -1,0 +1,43 @@
+<div class="data">
+    <div class="mb-3">
+       <span> <p-multiSelect class="coursedropdown" [options]="courses" formControlName="courses" optionLabel="name" (onChange)="updateSelectedCourses($event.value)" ></p-multiSelect></span>
+       <span class="result">Results:{{filteredDataLength?.length ?  filteredDataLength.length: formData.length}}</span>
+    </div>
+    <div class="tablee">
+    <p-table  [value]="formData ">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Std Id</th>
+                <th>Std Email</th>
+                <th> Ph No</th>
+                <th> Gender</th>
+                <th> Courses</th>
+                <th>Action</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-formValue>
+            <tr>
+                <td>{{ formValue.fname }}</td>
+                <td>{{ formValue.lname }}</td>
+                <td>{{ formValue.std }}</td>
+                <td>{{ formValue.std_email }}</td>
+                <td>{{ formValue.ph_no }}</td>
+                <td>{{ formValue.gender }}</td>
+                <td >
+                <ul>
+                    <li  *ngFor="let course of formValue.courses">{{ course.name }}</li>
+                </ul>
+              </td>
+                <td>
+                    <i class="fa-solid fa-pencil" disabled="formValue.editing"  (click)="editItem(formValue)"></i>
+                    <i class="fa solid fa-xmark" (click)="removeItem(formValue)" ></i>
+                 </td>
+            </tr>
+        </ng-template>
+    </p-table>
+    
+    </div>
+    </div>
+    

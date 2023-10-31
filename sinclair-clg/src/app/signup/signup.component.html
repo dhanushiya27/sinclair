@@ -1,0 +1,40 @@
+<section class="signup">
+    <div class="form-box">
+      <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+        <div class="card">
+          <h1 id="title">{{ title }}</h1>
+          <div class="input-field">
+            <i class="fa-solid fa-envelope"></i>
+            <input type="email" name="email" placeholder="Email" required [(ngModel)]="user.email" #email="ngModel">
+            <div *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="error-message">
+              <div *ngIf="email?.errors?.['required']">Email is required.</div>
+              <div *ngIf="email?.errors?.['email']">Invalid email format.</div>
+            </div>
+          </div>
+          <div class="input-field">
+            <i class="fa-solid fa-lock"></i>
+            <input type="password" name="password" placeholder="Password" required [(ngModel)]="user.password" #password="ngModel">
+            <div *ngIf="password?.invalid && (password?.dirty || password?.touched)" class="error-message">
+              <div *ngIf="password?.errors?.['required']">Password is required.</div>
+            </div>
+          </div>
+          <div class="input-field" *ngIf="showUserNameField">
+            <i class= "fa-solid fa-user"></i>
+            <input type="text" name="userName" placeholder="User Name" required [(ngModel)]="user.userName" #userName="ngModel">
+            <div *ngIf="userName?.invalid && (userName?.dirty || userName?.touched)" class="error-message">
+              <div *ngIf="userName?.errors?.['required']">User Name is required.</div>
+            </div>
+          </div>
+          <p *ngIf="showUserNameField">Already logged In? <a (click)="showSignIn()">Log In</a></p>
+          <p *ngIf="!showUserNameField">Create account? <a (click)="showSignUp()">Register</a></p>
+          <div class="btn-field">
+            <button (click)="registerUser()" id="signupBtn" *ngIf="!showUserNameField" [disabled]="userForm.invalid">Login</button>
+            <button (click)="loginUser()" id="signinBtn" *ngIf="showUserNameField" [disabled]="userForm.invalid">Register</button>
+          </div>
+        </div>
+      </form>
+      <br>
+    </div>
+  </section>
+  <app-success-message></app-success-message>
+  

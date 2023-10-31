@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
 import { SuccessMessageService } from '../service/success-message.service';
 import { PaginatorModule } from "primeng/paginator";
+import { RegisterComponent } from './register/register.component';
 
 interface PageEvent {
   page: number;
@@ -12,7 +13,7 @@ interface PageEvent {
 @Component({
   selector: 'app-course',
   standalone: true,
-  imports: [CommonModule,RouterModule,PaginatorModule],
+  imports: [CommonModule,RouterModule,PaginatorModule,RegisterComponent],
   templateUrl: './course.component.html',
   styleUrls: ['./course.component.scss']
 })
@@ -84,6 +85,7 @@ export class CourseComponent {
   }
 onRegister() {
   this.router.navigate(['/register']);
+  
 }
 toggleDetails(index: number) {
   this.showDetails[index] = !this.showDetails[index];

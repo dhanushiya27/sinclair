@@ -1,0 +1,8 @@
+<!-- success-message.component.html -->
+<div class="overlay" [ngClass]="{'show-overlay': successMessage$ | async}">
+    <div class="success-message" *ngIf="successMessage$ | async as message">
+      {{ message }}
+      <i class="fa-solid fa-xmark" (click)="closeMessage()"></i>
+    </div>
+  </div>
+  

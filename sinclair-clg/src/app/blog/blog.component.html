@@ -1,0 +1,21 @@
+<section class="blog-content">
+    <div class="row">
+      <div class="blog-left">
+        <video src="assets/images/college.mp4" controls></video>
+        <h2>Our Certificate & Online programs</h2>
+        <p  *ngFor="let left of bleft">{{left.con}} </p>       
+        <br/>  
+      </div>
+      <div class="blog-right">
+        <h3>Categories</h3>
+        <div *ngFor="let blog of blogs">
+          <span><a [routerLink]="['/blogContent', blog.id]" skipLocationChange="true">{{blog.title}}</a></span><span>{{blog.timing}}</span>
+        </div>
+        <h3>Post Categories</h3>
+        <div *ngFor="let post of postCat">
+          <span>{{post.title}}</span><span>{{post.timing}}</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  
