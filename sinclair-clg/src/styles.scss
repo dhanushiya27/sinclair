@@ -2,7 +2,6 @@
 @import 'primeng/resources/primeng.min.css';
 @import 'primeng/resources/themes/saga-blue/theme.css';
 
-
 * {
     margin: 0;
     padding: 0;
@@ -23,6 +22,7 @@
 .card.flex.justify-content-center {
     background: transparent;
     border: none;
+    margin: auto;
 }
 .p-multiselect-filter-icon {
     position: absolute;

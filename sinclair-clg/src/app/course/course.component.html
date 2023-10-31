@@ -1,0 +1,34 @@
+<section class="course" #maincontent>
+    <div class="search-bar">
+     <div class="course-heading">
+      <h1>Course We Offer</h1>
+      <i class="fa-solid fa-magnifying-glass" id="search-icon"></i>
+      <!-- any data val changes in html that is been read in ts is 2 way databinding -->
+      <input type="text" placeholder="Search a course" [(ngModel)]="searchQuery" (input)="filterCourses()" />
+      <a class="hero-btn red-btn" (click)="onRegister()">REGISTER</a>
+     </div>
+    </div>
+    <p>
+      Our student loans to study in the USA & Canada don't require a cosigner or credit history.
+    </p>
+   <div class="row">
+    <div class="course-col" *ngFor="let course of filteredCourses.slice(first,first + rows) ;let i = index">
+     <strong>{{ course.Title }}</strong>
+     <i class="fa-regular fa-heart" [ngClass]="{'white-heart': !isLiked(course),'red-heart': isLiked(course)}"
+     (click)="toggleLike(course)">
+     {{ getLikes(course.Title) }}
+     </i> 
+      <p>
+        {{ course.Desc }}
+        <span *ngIf="showDetails[i] == false" id="dots">...</span>
+        <span *ngIf="showDetails[i] ==true "id="more">{{ course.expdesc }}</span>
+      </p>
+      <button (click)="toggleDetails(i)" class="hero-btn red-btn" id="mybtn">
+        {{ showDetails[i] ? 'Read Less' : 'Read More' }}
+      </button>
+    </div>
+    <div class="card flex justify-content-center">
+      <p-paginator (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows" [totalRecords]="filteredCourses.length" ></p-paginator>
+    </div>
+  </div>
+</section>

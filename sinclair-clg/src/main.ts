@@ -1,15 +1,14 @@
 import { bootstrapApplication } from '@angular/platform-browser';
-import { appConfig } from './app/app.config';
 import { AppComponent } from './app/app.component';
 import { RouterModule, provideRouter } from '@angular/router';
-import { HomeComponent } from './app/home/home.component';
 import { AboutComponent } from './app/about/about.component';
 import { importProvidersFrom } from '@angular/core';
+import { CourseComponent } from './app/course/course.component';
 
 bootstrapApplication(AppComponent, {
   providers:[ 
-    importProvidersFrom(RouterModule.forRoot([  {path:'home',component:HomeComponent},
-    {path:'about',component:AboutComponent}]
+    importProvidersFrom(RouterModule.forRoot([  {path:'home',loadComponent:()=>import('./app/home/home.component').then(c=>c.HomeComponent)},
+    {path:'about',component:AboutComponent},{path:'course',component:CourseComponent}]
   )),
   // provideRouter([
   //   // {path:'home',component:HomeComponent},
