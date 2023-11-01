@@ -6,13 +6,13 @@ import { RouterModule } from '@angular/router';
 import { ToastModule } from "primeng/toast";
 import { MultiSelectModule } from "primeng/multiselect";
 import { DropdownModule } from "primeng/dropdown";
-// import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { RegisterDataComponent } from '../register-data/register-data.component';
 import { FilterPipe } from "../../pipes/filter.pipe";
 
 @Component({
   selector: 'app-register',
   standalone: true,
+  providers:[MessageService],
   imports: [CommonModule,RouterModule,RegisterComponent,FilterPipe,RegisterDataComponent ,FormsModule,ToastModule, DropdownModule,MultiSelectModule,ReactiveFormsModule,],
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']

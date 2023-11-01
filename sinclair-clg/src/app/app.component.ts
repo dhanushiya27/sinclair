@@ -5,10 +5,11 @@ import { FooterComponent } from './sharedComponents/footer/footer.component';
 import { ActivatedRoute, NavigationEnd, Router, RouterModule, RouterOutlet } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
+import { RegisterComponent } from './course/register/register.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule,HeaderComponent,RouterModule,FooterComponent,RouterOutlet,HomeComponent,AboutComponent],
+  imports: [CommonModule,HeaderComponent,RouterModule,FooterComponent,RouterOutlet,HomeComponent,AboutComponent,RegisterComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })

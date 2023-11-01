@@ -4,12 +4,12 @@ import { Router, RouterModule } from '@angular/router';
 import { SuccessMessageService } from '../service/success-message.service';
 import { PaginatorModule } from "primeng/paginator";
 import { RegisterComponent } from './register/register.component';
+import { routes } from '../app-routing.module';
 
 interface PageEvent {
   page: number;
   pageCount: number;
 }
-
 @Component({
   selector: 'app-course',
   standalone: true,
@@ -84,8 +84,7 @@ export class CourseComponent {
     window.scroll(0,0);
   }
 onRegister() {
-  this.router.navigate(['/register']);
-  
+  this.router.navigate(['/register']); 
 }
 toggleDetails(index: number) {
   this.showDetails[index] = !this.showDetails[index];
