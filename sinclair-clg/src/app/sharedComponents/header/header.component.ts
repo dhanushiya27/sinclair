@@ -10,7 +10,7 @@ import { RouterModule, RouterOutlet } from '@angular/router';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  isMenuOpen: boolean = false;
+    isMenuOpen: boolean = false;
   @Input() isHomePage!: boolean;
 
   toggleMenu() {

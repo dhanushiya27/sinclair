@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router, RouterModule } from '@angular/router';
+import {  Router, RouterModule } from '@angular/router';
 import { SuccessMessageService } from '../service/success-message.service';
 import { PaginatorModule } from "primeng/paginator";
 import { RegisterComponent } from './register/register.component';
-import { routes } from '../app-routing.module';
+
 
 interface PageEvent {
   page: number;

@@ -40,6 +40,7 @@ input{
   outline: none;
   padding-bottom: 5px;
   padding-top: 10px;
+  font-size: 16px;
 }
 input[type="radio"]{
   width: 15px;
@@ -101,8 +102,8 @@ button{
   color: #bd4257;
   font-weight: 600;
   margin-bottom: 30px;
+  font-size: 28px;
 } 
-
 .input-group{
   display: table-row;
 }
@@ -136,15 +137,7 @@ button{
     flex-basis: 100%; 
   }
 }
-@media (min-width: 1024px ){
-  .container {
-    width: 100%; 
-  }
-  .contact-right img {
-    width: 100%; 
-    height: 100%;
-  }
-}
+
  @media (max-width: 425px) {
   .container {
     width: 100%;
