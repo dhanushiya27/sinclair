@@ -1,13 +1,12 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
 import { TableModule } from "primeng/table";
 import { MultiSelectModule } from "primeng/multiselect";
 
 @Component({
   selector: 'app-register-data',
   standalone: true,
-  imports: [CommonModule,RouterModule,RegisterDataComponent,TableModule,MultiSelectModule],
+  imports: [CommonModule,TableModule,MultiSelectModule],
   templateUrl: './register-data.component.html',
   styleUrls: ['./register-data.component.scss']
 })

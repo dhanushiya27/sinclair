@@ -1,6 +1,6 @@
 import { BrowserModule, bootstrapApplication } from '@angular/platform-browser';
 import { AppComponent } from './app/app.component';
-import { RouterModule, provideRouter } from '@angular/router';
+import { RouterModule, provideRouter} from '@angular/router';
 import { AboutComponent } from './app/about/about.component';
 import { importProvidersFrom } from '@angular/core';
 import { CourseComponent } from './app/course/course.component';
@@ -14,10 +14,12 @@ bootstrapApplication(AppComponent, {
     importProvidersFrom(RouterModule.forRoot([ {path:'home',loadComponent:()=>import('./app/home/home.component').then(c=>c.HomeComponent)},
     {path:'about',component:AboutComponent},
     {path:'course',component:CourseComponent},
-    {path:'register',component:RegisterComponent},
-    {path:'blog',component:BlogComponent},
+    { path: 'course/register', component: RegisterComponent },
+     {path:'blog',component:BlogComponent},
     {path:'signup',component:SignupComponent}]
   )),
+
+  
   // provideRouter([
   //   // {path:'home',component:HomeComponent},
   //   // {path:'about',component:AboutComponent}
@@ -25,4 +27,5 @@ bootstrapApplication(AppComponent, {
   //   // {path:'about',loadComponent:()=>import('./app/about/about.component').then(c=>c.AboutComponent)},
   // ])
 ]
+
 })

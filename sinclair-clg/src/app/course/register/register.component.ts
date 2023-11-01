@@ -2,18 +2,19 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MessageService } from 'primeng/api';
-import { RouterModule } from '@angular/router';
 import { ToastModule } from "primeng/toast";
 import { MultiSelectModule } from "primeng/multiselect";
 import { DropdownModule } from "primeng/dropdown";
 import { RegisterDataComponent } from '../register-data/register-data.component';
 import { FilterPipe } from "../../pipes/filter.pipe";
+import {  RouterModule, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  providers:[MessageService],
-  imports: [CommonModule,RouterModule,RegisterComponent,FilterPipe,RegisterDataComponent ,FormsModule,ToastModule, DropdownModule,MultiSelectModule,ReactiveFormsModule,],
+  providers:[MessageService,RouterOutlet],
+  imports: [CommonModule,RouterModule,FilterPipe
+  ,RegisterDataComponent ,FormsModule,ToastModule, DropdownModule,MultiSelectModule,ReactiveFormsModule,],
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })

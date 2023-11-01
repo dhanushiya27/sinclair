@@ -18,6 +18,9 @@ export class AppComponent {
   showFooter: boolean = true;
   isHomePage: boolean = false; 
   isRegisterPage: boolean = false;
+  isRegistersPage: boolean = false;
+
+ 
   
   constructor(private router: Router,private route: ActivatedRoute) {
     this.router.events.subscribe((event) => {
@@ -35,6 +38,11 @@ export class AppComponent {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.isRegisterPage = event.url.includes('/register');
+      }
+    });
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.isRegistersPage = this.router.url === '/register';
       }
     });
   }

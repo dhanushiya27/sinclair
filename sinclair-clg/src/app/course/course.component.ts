@@ -83,9 +83,7 @@ export class CourseComponent {
   ngOnInit() {
     window.scroll(0,0);
   }
-onRegister() {
-  this.router.navigate(['/register']); 
-}
+
 toggleDetails(index: number) {
   this.showDetails[index] = !this.showDetails[index];
 }
