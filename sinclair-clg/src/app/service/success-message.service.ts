@@ -4,9 +4,10 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class SuccessMessageService {
-  private likes: Record<string, number> = {};
+  // private likes: Record<string, number> = {};
   private successMessage = new BehaviorSubject<string | null>(null);
   successMessage$ = this.successMessage.asObservable();
+  coursedata: any;
 
   showSuccessMessage(message: string) {
     this.successMessage.next(message);
@@ -14,15 +15,19 @@ export class SuccessMessageService {
   closeMessage() {
     this.successMessage.next(null);
   }
-  likeCourse(courseTitle: string) {
-    if (!this.likes[courseTitle]) {
-      this.likes[courseTitle] = 1;
-    } else {
-      this.likes[courseTitle]++;
-    }
+
+  likeCourse(course: any) {
+    course.numberoflikes += 1;
   }
-  getLikes(courseTitle: string): number {
-    return this.likes[courseTitle] || 0;
-  }
+  // likeCourse(courseTitle: string) {
+  //   if (!this.likes[courseTitle]) {
+  //     this.likes[courseTitle] = 1;
+  //   } else {
+  //     this.likes[courseTitle]++;
+  //   }
+  // }
+  // getLikes(courseTitle: string): number {
+  //   return this.likes[courseTitle] || 0;
+  // }
 }
 

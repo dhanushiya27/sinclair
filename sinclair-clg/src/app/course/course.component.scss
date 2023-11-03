@@ -84,13 +84,24 @@ i.fa-magnifying-glass {
   padding: 5px;
   border-radius: 5px;
 }
-.fa-regular.fa-heart.red-heart {
-  color: red;
+.red-heart{
+  color:red;
   font-weight: 800;
   cursor: pointer;
   background-color: pink;
   padding: 5px;
   border-radius: 5px;
+}
+// .fa-regular.fa-heart.red-heart {
+//   color: red;
+//   font-weight: 800;
+//   cursor: pointer;
+//   background-color: pink;
+//   padding: 5px;
+//   border-radius: 5px;
+// }
+.fa-regular{
+  cursor: pointer;
 }
 ::ng-deep .p-paginator {
   background-color: transparent;

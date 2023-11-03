@@ -21,49 +21,59 @@ export class CourseComponent {
   showDetails: boolean[] = [];
   searchQuery: string = '';
   filteredCourses: any[] = [];
+  isLiked: boolean = false;
   coursedata =[
     {
       Title:"Accounting",
+      numberoflikes:2,
       Desc:"Survey of financial accounting for non-accounting majors. Accounting concepts, financial statements, internal control, cash, and payroll.Survey of financial accounting for non-accounting majors. Accounting concepts, financial statements.",
       expdesc:" Division: Business and Public Services Department: Accounting Repeatable Credit: No Offered Online: Yes Prereqs: NONE"
     },
     {
       Title:"Africana Studies",
+      numberoflikes:1,
       Desc:"Social science introduction to the origins, relevance and scope of African American Studies. Topics include African American history, religion, sociology, politics, economics and psychology within a multicultural context.",
       expdesc:"Division: Liberal Arts, Communication and Social Sciences Department: Africana Studies Repeatable Credit: No Offered Online: Yes Prereqs: NONE",
     },
     {
       Title:"Pathophysiology",
+      numberoflikes:4,
       Desc:"Study of human disease using a system approach emphasizing abnormal physiological processes that result in the signs and symptoms of each disorder. Traditional testing (proctored or in Testing Center) is used in all online sections.",
       expdesc:"Division: Health Sciences Department: Allied Health Repeatable Credit: No Offered Online: Yes Prereqs: BIO 1107 OR BIO 1121 OR BIO 1141 OR BIO 2211",
     },
     {
       Title:"Astronomy",
+      numberoflikes:2,
       Desc:" Lab and field activities to supplement Stars, Galaxies & the Universe. Three lab hours per week.Lab and field activities to supplement Stars, Galaxies & the Universe. Three lab hours per week.Lab and field activities to supplement Stars, Galaxies.",
       expdesc:"Division: Science, Mathematics and Engineering Department:Astronomy Repeatable Credit: No >Offered Online: Yes Prereqs: NONE",
     },
     {
       Title:"Microbiology",
+      numberoflikes:1,
       Desc:" Morphology and physiology of microorganisms and selected human parasites, mechanisms of disease production, host responses, spread of infectious diseases. Three classroom, three lab hours per week.",
       expdesc:"Division: Science, Mathematics and Engineering Department: Biology Repeatable Credit: No Offered Online: Yes Prereqs:BIO 1107 OR BIO 1111 OR BIO 1141 OR BIO 1121 OR BIO 1171",
     },
     {
       Title:"Hospital Management",
+      numberoflikes:3,
       Desc:"This course is designed to provide students with the principles of supervision in the hospitality and tourism industry and the associated responsibilities. Topics include managing resources,team building.",
       expdesc:"Division: Science, Mathematics and Engineering Department: Biology Repeatable Credit: No Offered Online: Yes Prereqs:BIO 1107 OR BIO 1111 OR BIO 1141 OR BIO 1121 OR BIO 1171",
     },
     {
       Title:"Philosophy",
+      numberoflikes:2,
       Desc:"Basic nature of philosophy, its relationship to physical and social sciences and theology and its value to the individual.relationship to physical and social sciences and theology relationship to physical and ",
       expdesc:"Division: Liberal Arts, Communication and Social Sciences Department: Philosophy Repeatable Credit: No Offered Online: Yes Prereqs: NONE  ",
     },
     {
       Title:"Spanish",
+      numberoflikes:7,
       Desc:"Foundation for understanding, speaking, reading and writing Spanish. Work outside of class and/or in the language laboratory is required.Reviews and extends basic principles through composition and conversation.",
       expdesc:"Division: Liberal Arts, Communication and Social Sciences Department: Spanish Repeatable Credit: No Offered Online: Yes Prereqs: SPA 1102 ",
     },
     {
       Title:"Visual Communication",
+      numberoflikes:4,
       Desc:"History of graphic design covering major designers and their work, as well as design movements. From the origins of graphic art including printing and typography through the rise of the Internet, this course will explore.",
       expdesc:"Division: Liberal Arts, Communication and Social Sciences Department: Design Repeatable Credit: No Offered Online: Yes Prereqs: DEV 0035 ",
     },
@@ -71,6 +81,7 @@ export class CourseComponent {
   ] 
     first: number = 0;
     rows: number = 6;
+  SuccessMessageService: any;
     onPageChange(event: any) {
         this.first = event.first;
         this.rows = event.rows;
@@ -99,13 +110,7 @@ filterCourses() {
     );
   }
  }
- isLiked(course: any): boolean {
-  return this.likeService.getLikes(course.Title) > 0; 
-}
-toggleLike(course: any) {
-  this.likeService.likeCourse(course.Title);
-}
-getLikes(courseTitle: string): number {
-  return this.likeService.getLikes(courseTitle); 
-}
+ likecourse(course: any) {
+  this.likeService.likeCourse(course); 
+ }
 }
