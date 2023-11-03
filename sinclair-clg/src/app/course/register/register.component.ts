@@ -61,7 +61,8 @@ export class RegisterComponent {
     this.form.reset();
   } 
   showSuccess() {
-    this.messageService.add({severity:'success', summary:'Success', detail:'Enrolled course successfully',sticky: true})
+    console.log('showSuccess method called');
+    this.messageService.add({severity:'success', summary:'Success', detail:'Enrolled course successfully'})
     this.overlayVisible = true;;
   }
   
@@ -87,6 +88,5 @@ export class RegisterComponent {
     this.formValues[index] = this.form.value; //
     localStorage.setItem('formValues', JSON.stringify(this.formValues));
     this.form.reset();
-    
   }
 }

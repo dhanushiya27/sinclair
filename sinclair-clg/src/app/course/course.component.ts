@@ -21,11 +21,11 @@ export class CourseComponent {
   showDetails: boolean[] = [];
   searchQuery: string = '';
   filteredCourses: any[] = [];
-  isLiked: boolean = false;
+
   coursedata =[
     {
       Title:"Accounting",
-      numberoflikes:2,
+      numberoflikes:0,
       Desc:"Survey of financial accounting for non-accounting majors. Accounting concepts, financial statements, internal control, cash, and payroll.Survey of financial accounting for non-accounting majors. Accounting concepts, financial statements.",
       expdesc:" Division: Business and Public Services Department: Accounting Repeatable Credit: No Offered Online: Yes Prereqs: NONE"
     },
@@ -88,7 +88,6 @@ export class CourseComponent {
     }
   constructor(private router: Router,private likeService:SuccessMessageService) {
     this.showDetails = new Array(this.coursedata.length).fill(false);
-    console.log(this.showDetails);
     this.filteredCourses = this.coursedata;
   }
   ngOnInit() {
@@ -112,5 +111,6 @@ filterCourses() {
  }
  likecourse(course: any) {
   this.likeService.likeCourse(course); 
+  course.liked = true;
  }
 }

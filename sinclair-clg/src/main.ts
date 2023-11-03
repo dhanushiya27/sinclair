@@ -16,8 +16,8 @@ bootstrapApplication(AppComponent, {
     {path:'about',component:AboutComponent},
     {path:'course',component:CourseComponent},
     { path: 'register', component: RegisterComponent },
-     {path:'blog',component:BlogComponent},
-     { path: 'blogContent/:id', component: BlogContentComponent },
+    {path:'blog',component:BlogComponent},
+    { path: 'blogContent/:id', component: BlogContentComponent },
     {path:'signup',component:SignupComponent}]
   )),
 
