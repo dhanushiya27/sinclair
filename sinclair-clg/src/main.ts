@@ -8,6 +8,7 @@ import { RegisterComponent } from './app/course/register/register.component';
 import { BlogComponent } from './app/blog/blog.component';
 import { SignupComponent } from './app/signup/signup.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BlogContentComponent } from './app/blog-content/blog-content.component';
 bootstrapApplication(AppComponent, {
   providers:[importProvidersFrom(BrowserModule),
     importProvidersFrom(BrowserAnimationsModule),
@@ -16,6 +17,7 @@ bootstrapApplication(AppComponent, {
     {path:'course',component:CourseComponent},
     { path: 'course/register', component: RegisterComponent },
      {path:'blog',component:BlogComponent},
+     { path: 'blogContent/:id', component: BlogContentComponent },
     {path:'signup',component:SignupComponent}]
   )),
 

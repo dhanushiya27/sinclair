@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import {  Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-blog',
@@ -10,9 +10,6 @@ import { RouterModule } from '@angular/router';
   styleUrls: ['./blog.component.scss']
 })
 export class BlogComponent {
-  ngOnInit() {
-    window.scroll(0,0);
-  }
   bleft=[
     {con:"Certificate programs are academic programs of study designed to prepare students for a particular career area, but not at the level required for an associate degree. There are general certificate programs and short term technical certificates."},
     {con:"The technical certificates are much more industry focused and designed for workforce preparation.These academic programs are often less credit-intensive than other certificates because they are strictly focused on a particular job or vocational area."},
@@ -37,4 +34,15 @@ export class BlogComponent {
     {title:"Journalism",timing:"22 Hours"},
     {title:"AutoCAD",timing:"41 Hours"},
   ]
+  constructor(private router:Router){}
+  ngOnInit() {
+    window.scroll(0,0);
+  }
+  // onEdit(){
+  //   console.log("hiiiii");
+  //   this.router.navigate(["blogContent"])
+  // }
+  onEdit(blogId: number) {
+    this.router.navigate(["blogContent", blogId]);
+  }
 }

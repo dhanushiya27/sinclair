@@ -1,0 +1,32 @@
+.blog {
+    width: 100%;
+    margin: auto;
+    padding: 50px 0;
+    background-color: #072f5f;
+  }
+.body{
+    width: 80%;
+    margin: auto;
+    text-align: justify;
+    /* background-color: #0c243c; */
+    /* margin-top: 3%;
+    margin-bottom: 3%; */
+  }
+  .list-group{
+    background-color:#fff;
+    padding: 2%;
+    margin: auto;
+    transition: 0.5s;
+  }
+  .list-group h4{
+    padding: 1%;
+    color: #243f56;
+  }
+  
+  .list-group p{
+    color: black;
+  }
+  
+  .list-group:hover{
+    background-color: cadetblue;
+  }

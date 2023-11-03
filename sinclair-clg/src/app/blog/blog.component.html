@@ -9,7 +9,7 @@
       <div class="blog-right">
         <h3>Categories</h3>
         <div *ngFor="let blog of blogs">
-          <span><a [routerLink]="['/blogContent', blog.id]" skipLocationChange="true">{{blog.title}}</a></span><span>{{blog.timing}}</span>
+          <span><a (click)="onEdit(blog.id)">{{blog.title}}</a></span><span>{{blog.timing}}</span>
         </div>
         <h3>Post Categories</h3>
         <div *ngFor="let post of postCat">
