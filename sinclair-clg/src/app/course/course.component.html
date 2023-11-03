@@ -6,7 +6,7 @@
       <!-- any data val changes in html that is been read in ts is 2 way databinding -->
       <input type="text" placeholder="Search a course" [(ngModel)]="searchQuery" (input)="filterCourses()" />
       <!-- <a class="hero-btn red-btn" (click)="onRegister()">REGISTER</a> -->
-      <a routerLink="/course/register" class="hero-btn red-btn"> REGISTER</a>
+      <a routerLink="/register" class="hero-btn red-btn"> REGISTER</a>
      </div>
     </div>
     <p>
@@ -33,4 +33,3 @@
     </div>
   </div>
 </section>
-<router-outlet></router-outlet>

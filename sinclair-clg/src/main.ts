@@ -15,7 +15,7 @@ bootstrapApplication(AppComponent, {
     importProvidersFrom(RouterModule.forRoot([ {path:'home',loadComponent:()=>import('./app/home/home.component').then(c=>c.HomeComponent)},
     {path:'about',component:AboutComponent},
     {path:'course',component:CourseComponent},
-    { path: 'course/register', component: RegisterComponent },
+    { path: 'register', component: RegisterComponent },
      {path:'blog',component:BlogComponent},
      { path: 'blogContent/:id', component: BlogContentComponent },
     {path:'signup',component:SignupComponent}]
