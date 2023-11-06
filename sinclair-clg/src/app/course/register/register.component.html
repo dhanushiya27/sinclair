@@ -11,14 +11,14 @@
          <div class="input-row">
            <div class="input-group">
              <label for="fname">First Name *</label>
-             <input type="text" id="fname" formControlName="fname" placeholder="Enter Your First Name" />
+             <input type="text" id="fname" formControlName="fname" placeholder="Enter Your First Name" [ngClass]="{'error-border': form.get('fname')?.invalid && form.get('fname')?.touched}"/>
              <div *ngIf="form.controls['fname'].hasError('required') && form.controls['fname'].touched" class="error-message">
                 First Name is required.
              </div>
            </div>
            <div class="input-group">
              <label for="lname">Last Name *</label>
-             <input type="text" id="lname" formControlName="lname" placeholder="Enter Your Last Name"/>
+             <input type="text" id="lname" formControlName="lname" placeholder="Enter Your Last Name" [ngClass]="{'error-border': form.get('lname')?.invalid && form.get('lname')?.touched}"/>
              <div *ngIf="form.controls['lname'].hasError('required') && form.controls['lname'].touched" class="error-message">
                Last Name is required.
              </div>
@@ -27,14 +27,14 @@
          <div class="input-row">
            <div class="input-group">
              <label for="std">Student Id *</label>
-             <input type="number"  id="std" formControlName="std" placeholder="Enter Std-id" class="no-spinners"  />
+             <input type="number"  id="std" formControlName="std" placeholder="Enter Std-id" class="no-spinners"  [ngClass]="{'error-border': form.get('std')?.invalid && form.get('std')?.touched}"/>
              <div *ngIf="form.controls['std'].hasError('required') && form.controls['std'].touched" class="error-message">
                std-id is required.
              </div>
            </div>
            <div class="input-group">
              <label for="std_email">Student Email *</label>
-             <input type="email" id="std_email" formControlName="std_email" placeholder="Enter Std-email" />
+             <input type="email" id="std_email" formControlName="std_email" placeholder="Enter Std-email"  [ngClass]="{'error-border': form.get('std_email')?.invalid && form.get('std_email')?.touched}"/>
              <div *ngIf="form.controls['std_email'].hasError('required') && form.controls['std_email'].touched" class="error-message">
                Std-email is required.
              </div>
@@ -46,14 +46,14 @@
          <div class="input-row">
            <div class="input-group">
              <label for="doj">Date of Joining *</label>
-             <input type="date" id="doj" formControlName="doj" placeholder="Enter Std-email"/>
+             <input type="date" id="doj" formControlName="doj" placeholder="Enter Std-email" [ngClass]="{'error-border': form.get('doj')?.invalid && form.get('doj')?.touched}"/>
              <div *ngIf="form.controls['doj'].hasError('required') && form.controls['doj'].touched" class="error-message">
                Date Of joining is required.
              </div>
            </div>
            <div class="input-group">
              <label for="ph_no">Phone *</label>
-             <input type="number" class="no-spinners"  id="ph_no" formControlName="ph_no" placeholder="Enter Your Number"  />
+             <input type="number" class="no-spinners"  id="ph_no" formControlName="ph_no" placeholder="Enter Your Number"  [ngClass]="{'error-border': form.get('ph_no')?.invalid && form.get('ph_no')?.touched}"/>
              <div *ngIf="form.controls['ph_no'].hasError('required') && form.controls['ph_no'].touched " class="error-message">
                Phone number is required.
              </div>

@@ -38,10 +38,7 @@ export class BlogComponent {
   ngOnInit() {
     window.scroll(0,0);
   }
-  // onEdit(){
-  //   console.log("hiiiii");
-  //   this.router.navigate(["blogContent"])
-  // }
+
   onEdit(blogId: number) {
     this.router.navigate(["blogContent", blogId]);
   }

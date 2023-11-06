@@ -1,3 +1,5 @@
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
 .hero-btn {
   display: inline-block;
   text-decoration: none;
@@ -29,6 +31,9 @@ p {
   text-align: center;
   padding-top: 100px;
   background-color: #072f5f;
+}
+body {
+  background: #072f5f;
 }
 .course-col {
   flex-basis: calc(33.33% - 20px);

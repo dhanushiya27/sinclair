@@ -15,8 +15,7 @@
    <div class="row">
     <div class="course-col" *ngFor="let course of filteredCourses.slice(first,first + rows) ;let i = index">
      <strong>{{ course.Title }}</strong>
-     <i class="fa-regular fa-heart" (click)="likecourse(course)" [ngClass]="{'red-heart': course.liked, 'white-heart': !course.liked}">{{course.numberoflikes}}</i>
-    
+     <i class="fa-regular fa-heart" (click)="likecourse(course)" [ngClass]="{'red-heart': course.liked, 'white-heart': !course.liked}">{{course.numberoflikes}}</i> 
       <p>
         {{ course.Desc }}
         <span *ngIf="showDetails[i] == false" id="dots">...</span>
@@ -26,8 +25,8 @@
         {{ showDetails[i] ? 'Read Less' : 'Read More' }}
       </button>
     </div>
-    <div class="card flex justify-content-center">
-      <p-paginator (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows" [totalRecords]="filteredCourses.length" ></p-paginator>
-    </div>
-  </div>
+   </div>
+   <div class="card flex justify-content-center">
+     <p-paginator (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows" [totalRecords]="filteredCourses.length" ></p-paginator>
+   </div>
 </section>
