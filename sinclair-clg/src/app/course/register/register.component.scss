@@ -1,3 +1,5 @@
+@import 'primeng/resources/themes/saga-blue/theme.css';
+@import 'primeng/resources/primeng.min.css';
 .bodyy {
   background-color: #0c243c;
 }
@@ -71,7 +73,7 @@ p {
 
 }
 .error-border {
-  border-bottom: 1px solid red !important;
+  border-bottom: 1px solid red ;
 }
 
 /* .selsub {

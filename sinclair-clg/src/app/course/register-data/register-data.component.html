@@ -3,8 +3,9 @@
        <span> <p-multiSelect class="coursedropdown" [options]="courses" formControlName="courses" optionLabel="name" (onChange)="updateSelectedCourses($event.value)" ></p-multiSelect></span>
        <span class="result">Results:{{filteredDataLength?.length ?  filteredDataLength.length: formData.length}}</span>
     </div>
-    <div class="tablee">
-    <p-table  [value]="formData ">
+    <div class="card">
+      <div class="table-scroll">
+       <p-table  [value]="formData "   [scrollable]="true" [style]="{'width': '1000px'}">
         <ng-template pTemplate="header">
             <tr>
                 <th>First Name</th>
@@ -29,15 +30,14 @@
                 <ul>
                     <li  *ngFor="let course of formValue.courses">{{ course.name }}</li>
                 </ul>
-              </td>
-                <td>
+                </td>
+                <td  [style]="{'width':'10%'}">
                     <i class="fa-solid fa-pencil" disabled="formValue.editing"  (click)="editItem(formValue)"></i>
                     <i class="fa-solid fa-xmark" (click)="removeItem(formValue)" ></i>
                  </td>
             </tr>
         </ng-template>
-    </p-table>
-    
+       </p-table>
+      </div>
     </div>
-    </div>
-    
+</div> 

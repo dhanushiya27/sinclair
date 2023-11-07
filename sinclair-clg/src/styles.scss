@@ -1,5 +1,6 @@
-@import 'primeng/resources/primeng.min.css';
+
 @import 'primeng/resources/themes/saga-blue/theme.css';
+@import 'primeng/resources/primeng.min.css';
 
 * {
     margin: 0;
@@ -7,6 +8,18 @@
     box-sizing: border-box;
     font-family: 'poppins',sans-serif;
 }
+.card {
+    width: 100%;
+    // border-radius: 40px;
+    margin: auto;
+    margin-top: 20px;
+    max-width: 900px; /* Set the maximum height for the table container */
+    overflow: hidden;
+}
+.table-scroll {
+    overflow-x: auto; /* Add horizontal scrollbar when needed */
+    max-height: 100%; /* Allow the table to expand vertically */
+  }
 li.p-ripple.p-element.p-multiselect-item {
     margin-left: 30px;
   }
@@ -35,7 +48,6 @@ button.p-ripple.p-element.p-paginator-page.p-paginator-element.p-link {
     margin-left: 5px;
 }
 .p-multiselect-panel.p-component.ng-star-inserted {
-    /* margin: 8px; */
     padding: 7px;
 }
 span.ng-star-inserted {

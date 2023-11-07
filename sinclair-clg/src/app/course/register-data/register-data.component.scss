@@ -1,16 +1,16 @@
-.tablee{
-    margin: 50px;   
-} 
+
 ul {
     list-style-type: none;
     padding: 0;
 }
-tbody, td, tfoot, th, thead, tr{
-    border: 2px solid;
-    text-align: center;
-}
 .mb-3{
     padding-top: 30px;
+}
+table{
+    border-radius: 20px;
+}
+th,td{
+  padding: 0.5rem;
 }
 span{
     margin-left: 9.7%;
