@@ -17,9 +17,9 @@
   margin-top: 3%;
   margin-left: 10%;
   margin-right: 10%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); // Display 3 cards in a row
+  grid-gap: 20px;
 }
 p {
   color: #fff;
@@ -32,19 +32,20 @@ p {
   padding-top: 100px;
   background-color: #072f5f;
 }
-body {
-  background: #072f5f;
+::ng-deep .p-paginator {
+  background-color: transparent;
+  padding: 20px;
 }
+
 .course-col {
-  flex-basis: calc(33.33% - 20px);
+  // flex-basis: calc(33.33% - 20px);
+  // flex: 1;
   margin-right: 20px;
   background: #243f56;
   margin-bottom: 2%;
   padding: 20px 12px;
   box-sizing: border-box;
-  // box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
   display: inline-block; 
-  width: 100%;
 }
 strong{
   text-align: center;
@@ -97,21 +98,11 @@ i.fa-magnifying-glass {
   padding: 5px;
   border-radius: 5px;
 }
-// .fa-regular.fa-heart.red-heart {
-//   color: red;
-//   font-weight: 800;
-//   cursor: pointer;
-//   background-color: pink;
-//   padding: 5px;
-//   border-radius: 5px;
-// }
+
 .fa-regular{
   cursor: pointer;
 }
-::ng-deep .p-paginator {
-  background-color: transparent;
-  margin: 20px;
-}
+
 h1 {
   font-size: 26px;
   font-weight: 600;

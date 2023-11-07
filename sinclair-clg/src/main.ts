@@ -9,10 +9,12 @@ import { BlogComponent } from './app/blog/blog.component';
 import { SignupComponent } from './app/signup/signup.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BlogContentComponent } from './app/blog-content/blog-content.component';
+import { HomeComponent } from './app/home/home.component';
 bootstrapApplication(AppComponent, {
   providers:[importProvidersFrom(BrowserModule),
     importProvidersFrom(BrowserAnimationsModule),
     importProvidersFrom(RouterModule.forRoot([ {path:'home',loadComponent:()=>import('./app/home/home.component').then(c=>c.HomeComponent)},
+    {path:'',component:HomeComponent},
     {path:'about',component:AboutComponent},
     {path:'course',component:CourseComponent},
     { path: 'register', component: RegisterComponent },

@@ -12,21 +12,21 @@
     <p>
       Our student loans to study in the USA & Canada don't require a cosigner or credit history.
     </p>
-   <div class="row">
-    <div class="course-col" *ngFor="let course of filteredCourses.slice(first,first + rows) ;let i = index">
-     <strong>{{ course.Title }}</strong>
-     <i class="fa-regular fa-heart" (click)="likecourse(course)" [ngClass]="{'red-heart': course.liked, 'white-heart': !course.liked}">{{course.numberoflikes}}</i> 
-      <p>
+    <div class="row">
+     <div class="course-col" *ngFor="let course of filteredCourses.slice(first,first + rows) ;let i = index">
+      <strong>{{ course.Title }}</strong>
+      <i class="fa-regular fa-heart" (click)="likecourse(course)" [ngClass]="{'red-heart': course.liked, 'white-heart': !course.liked}">{{course.numberoflikes}}</i> 
+       <p>
         {{ course.Desc }}
         <span *ngIf="showDetails[i] == false" id="dots">...</span>
         <span *ngIf="showDetails[i] ==true "id="more">{{ course.expdesc }}</span>
-      </p>
-      <button (click)="toggleDetails(i)" class="hero-btn red-btn" id="mybtn">
-        {{ showDetails[i] ? 'Read Less' : 'Read More' }}
-      </button>
+       </p>
+       <button (click)="toggleDetails(i)" class="hero-btn red-btn" id="mybtn">
+         {{ showDetails[i] ? 'Read Less' : 'Read More' }}
+       </button>
+     </div>
     </div>
-   </div>
-   <div class="card flex justify-content-center">
-     <p-paginator (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows" [totalRecords]="filteredCourses.length" ></p-paginator>
-   </div>
+    <div class=".card.flex.justify-content-center">
+      <p-paginator (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows" [totalRecords]="filteredCourses.length" ></p-paginator>
+    </div>
 </section>
