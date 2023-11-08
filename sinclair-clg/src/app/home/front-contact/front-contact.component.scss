@@ -1,0 +1,48 @@
+.contact {
+    width: 100%;
+    background-color: #072f5f;
+    margin-top: 0%;
+    margin-bottom: 0%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .hero-btn {
+    display: inline-block;
+    text-decoration: none;
+    background-color:#f44336;
+    color: #fff;
+    padding: 12px 34px;
+    font-size: 13px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+  }
+  .cta {
+    margin: 100px auto;
+    width: 88%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+      url('../../../assets/images/banner.png'); 
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    text-align: center;
+    padding: 100px 0;
+  }
+  h1 {
+    font-size: 26px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 40px;
+    margin-left: 30%;
+    margin-right: 29%;
+  }
+  @media(max-width:700px){
+    .cta h1{
+      font-size:24px;
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+    .cta{
+      margin: 50px auto;
+    }
+  }

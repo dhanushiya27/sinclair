@@ -6,14 +6,13 @@ import { ToastModule } from "primeng/toast";
 import { MultiSelectModule } from "primeng/multiselect";
 import { DropdownModule } from "primeng/dropdown";
 import { RegisterDataComponent } from '../register-data/register-data.component';
-import { FilterPipe } from "../../pipes/filter.pipe";
 import {  RouterModule, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  providers:[MessageService,RouterOutlet],
-  imports: [CommonModule,RouterModule,FilterPipe
+  providers:[MessageService],
+  imports: [CommonModule,RouterModule
   ,RegisterDataComponent ,FormsModule,ToastModule, DropdownModule,MultiSelectModule,ReactiveFormsModule,],
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
@@ -50,7 +49,7 @@ export class RegisterComponent {
             ph_no: [ '',[ Validators.required,Validators.minLength(10),Validators.maxLength(10), Validators.pattern('^[0-9]{10}$')]],
             gender: ['', Validators.required],
             lang: [''], 
-            courses: ['', Validators.required], 
+            courses: [''], 
           });
   }
   ngOnInit() {}
@@ -61,9 +60,9 @@ export class RegisterComponent {
     this.form.reset();
   } 
   showSuccess() {
-    console.log('showSuccess method called');
-    this.messageService.add({severity:'success', summary:'Success', detail:'Enrolled course successfully'})
-    this.overlayVisible = true;;
+     console.log('showSuccess method called');
+  this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Enrolled course successfully' });
+  this.overlayVisible = true;
   }
   
   handleToastClose(){

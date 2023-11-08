@@ -1,1 +1,7 @@
-<p>front contact works</p>
+<section class="contact">
+    <div class="cta" *ngFor="let cta of fcontact">
+      <h1>{{ cta.title }}</h1>
+      <button (click)="openPopupDialog()" class="hero-btn red-btn">{{ cta.us }}</button>
+    </div>
+    <app-popup *ngIf="isPopupVisible"></app-popup>
+  </section>

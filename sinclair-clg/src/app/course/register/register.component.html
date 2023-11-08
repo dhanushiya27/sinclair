@@ -81,7 +81,7 @@
              <p-multiSelect class="coursedropdown" [options]="courses" formControlName="courses" optionLabel="name" ></p-multiSelect>
            </div>
          </div>
-         <button type="submit"  class="button" [disabled]="form.invalid" *ngIf="!editForm"  >Enroll</button>
+         <button type="submit"  class="button" [disabled]="form.invalid" *ngIf="!editForm" (click)="showSuccess()" >Enroll</button>
          <button type="button" (click)="saveEditedData()" *ngIf="editForm">Update</button>
 
        </form>

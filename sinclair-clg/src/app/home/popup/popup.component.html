@@ -1,0 +1,43 @@
+<form [formGroup]="popupForm" (ngSubmit)="onSubmit()">
+    <div class="input-row">
+      <div class="input-group">
+        <label for="fname">User Name *</label>
+        <input type="text" id="fname" formControlName="fname" placeholder="Enter Your User Name"
+        [ngClass]="{'error-border': popupForm.get('fname')?.invalid && popupForm.get('fname')?.touched}" />
+  <div *ngIf="popupForm.get('fname')?.hasError('required') && popupForm.get('fname')?.touched" class="error-message">
+   User Name is required.
+  </div>
+      </div>
+      <div class="input-group">
+        <label for="std_email">Email Id *</label>
+        <input type="email" id="std_email" formControlName="std_email" placeholder="Enter Email Id" 
+        [ngClass]="{'error-border': popupForm.get('std_email')?.invalid && popupForm.get('std_email')?.touched}"/>
+        <div *ngIf="popupForm.get('std_email')?.hasError('required') && popupForm.get('std_email')?.touched" class="error-message">
+          Email is required.
+        </div>
+        <div *ngIf="popupForm.get('std_email')?.hasError('email') && popupForm.get('std_email')?.touched" class="error-message">
+          Invalid email format.
+        </div>
+      </div>
+    </div>
+    <div class="input-row">
+      <div class="input-group">
+        <label for="ph_no">Phone *</label>
+        <input type="number" class="no-spinners" id="ph_no" formControlName="ph_no" placeholder="Enter Your Phone Number"
+        [ngClass]="{'error-border': popupForm.get('ph_no')?.invalid && popupForm.get('ph_no')?.touched}" />
+        <div *ngIf="popupForm.get('ph_no')?.hasError('required') && popupForm.get('ph_no')?.touched" class="error-message">
+          Phone is required.
+        </div>
+      </div>
+      <div class="input-group">
+        <label for="message">Message *</label>
+        <input id="message" formControlName="message" placeholder="Enter Your Message"
+        [ngClass]="{'error-border': popupForm.get('message')?.invalid && popupForm.get('message')?.touched}"/>
+        <div *ngIf="popupForm.get('message')?.hasError('required') && popupForm.get('message')?.touched" class="error-message">
+          Message is required.
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="hero-btn">Send Message</button>
+  </form>
+  
