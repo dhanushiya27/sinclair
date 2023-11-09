@@ -17,5 +17,7 @@ import { RouterModule } from '@angular/router';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
- 
+  ngOnInit(){
+    window.scroll(0,0);
+  }
 }
