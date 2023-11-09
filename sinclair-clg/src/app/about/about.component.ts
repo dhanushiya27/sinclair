@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
@@ -11,9 +11,6 @@ import { RouterModule } from '@angular/router';
   styleUrls: ['./about.component.scss']
 })
 export class AboutComponent {
-  ngOnInit(){
-    // window.scroll(0,0);
- }
 showDetails: boolean = false;
 about = 
   {
@@ -24,10 +21,16 @@ about =
     img:"assets/images/about.jpg"
   }
 ;
+// @HostListener('click', ['$event.target'])
+// onClick(target: HTMLElement) {
+//   this.showDetails = !this.showDetails;
+// }
 myDetails() {
   this.showDetails= !this.showDetails;
 }
 
-
+ngOnInit(){
+  // window.scroll(0,0);
+}
 
 }
