@@ -5,7 +5,6 @@ import { Pipe, PipeTransform } from '@angular/core';
   standalone: true
 })
 export class FilterPipe implements PipeTransform {
-
   transform(items: any[],selectedCourses: any[]): any[] {
     if (!items || !selectedCourses || selectedCourses.length === 0) {
       return items;
