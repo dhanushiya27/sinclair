@@ -6,7 +6,7 @@ import { BehaviorSubject } from 'rxjs';
 export class SuccessMessageService {
   private successMessage = new BehaviorSubject<string | null>(null);
   successMessage$ = this.successMessage.asObservable();
-  coursedata: any;
+  // coursedata: any;
 
   showSuccessMessage(message: string) {
     this.successMessage.next(message);
