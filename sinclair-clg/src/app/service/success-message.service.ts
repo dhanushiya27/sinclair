@@ -14,7 +14,6 @@ export class SuccessMessageService {
   closeMessage() {
     this.successMessage.next(null);
   }
-
   likeCourse(course: any) {
     course.numberoflikes += 1;
   }
