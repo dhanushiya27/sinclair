@@ -10,11 +10,9 @@
 }
 .card {
     width: 100%;
-    // border-radius: 40px;
     margin: auto;
     margin-top: 20px;
-    max-width: 900px; /* Set the maximum height for the table container */
-    overflow: hidden;
+    max-width:80%; 
 }
 .table-scroll {
     overflow-x: auto; /* Add horizontal scrollbar when needed */
@@ -67,4 +65,8 @@ span#pn_id_2_header_title {
     width: 100%;
     margin-top: 85%;
     padding: 20px;
+}
+table#pn_id_10-table {
+    width: 120%;
+    max-width: 120%;
 }

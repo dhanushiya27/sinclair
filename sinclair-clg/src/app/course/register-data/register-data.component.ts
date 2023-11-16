@@ -41,6 +41,14 @@ export class RegisterDataComponent {
     formValue.editing = true;
     this.editItemEvent.emit(formValue);
   }
-  
+  // sortDataAlphabetically() {
+  //   this.formData.sort((a: { fname: string }, b: { fname: string }) => a.fname.localeCompare(b.fname));
+  // }
+  sortDataAlphabetically(ascending: boolean = true) {
+    this.formData.sort((a: { fname: string }, b: { fname: string }) => {
+      const comparison = a.fname.localeCompare(b.fname);
+      return ascending ? comparison : -comparison;
+    });
+  }
 }
 
