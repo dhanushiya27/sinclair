@@ -20,11 +20,6 @@ about =
     nextpara:"With one of the lowest tuition rates in Ohio, Sinclair is committed to providing quality education and consistently ranks among the top community colleges in America. Sinclair's student-to-faculty ratio of nineteen-to-one is among the lowest at any Ohio college. On average, Sinclair students receiving associate degrees see an earnings increase from $22,000 to $38,000 in the first year after graduation. (Source: ODJFS and NSC data).",
     img:"assets/images/about.jpg"
   }
-;
-// @HostListener('click', ['$event.target'])
-// onClick(target: HTMLElement) {
-//   this.showDetails = !this.showDetails;
-// }
 myDetails() {
   this.showDetails= !this.showDetails;
 }

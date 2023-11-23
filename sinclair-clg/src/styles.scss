@@ -9,18 +9,27 @@
     font-family: 'poppins',sans-serif;
 }
 .card {
-    width: 100%;
+    // width: 100%;
     margin: auto;
     margin-top: 20px;
-    max-width:80%; 
+    max-width:80%;
+}
+.p-dialog-header-icons.ng-tns-c647991600-0 {
+    margin-right: 26px;
+}
+.p-carousel-items-content {
+    margin-right: -16px;
 }
 .table-scroll {
-    overflow-x: auto; /* Add horizontal scrollbar when needed */
-    max-height: 100%; /* Allow the table to expand vertically */
+    overflow-x: auto; 
+    max-height: 100%; 
   }
 li.p-ripple.p-element.p-multiselect-item {
     margin-left: 30px;
   }
+button.ng-tns-c647991600-0.p-dialog-header-icon.p-dialog-header-maximize.p-link.ng-star-inserted {
+    color:#f44336;
+}
 .mb-3 p-multiselect.coursedropdown .p-multiSelect {
     width: 550px !important;
     margin-left: 40px;

@@ -16,9 +16,9 @@ export class RegisterDataComponent {
   @Input() formData:any;
   @Input() courses:any;
   @Output() removeItemFromParent = new EventEmitter<any>();
+  @Output() editItemEvent = new EventEmitter<any>();
   selectedCourses: any;
   filteredDataLength: any;
-  @Output() editItemEvent = new EventEmitter<any>();
   
   updateSelectedCourses(selectedCourses: any[]): void {
   this.selectedCourses = selectedCourses;
@@ -49,6 +49,5 @@ export class RegisterDataComponent {
       const comparison = a.fname.localeCompare(b.fname);
       return ascending ? comparison : -comparison;
     });
-  }
+  } 
 }
-

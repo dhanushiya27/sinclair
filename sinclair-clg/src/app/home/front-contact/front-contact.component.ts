@@ -15,15 +15,15 @@ export class FrontContactComponent {
   constructor(private dialogService: DialogService) {}
 
   openPopupDialog() {
-    const ref = this.dialogService.open(PopupComponent, {
-      header: 'Contact Us', // Dialog header
-      width: '70%', // Adjust the width as needed
+    const open = this.dialogService.open(PopupComponent, {
+      header: 'Contact Us', 
+      // width: '70%', 
     });
   }
   fcontact=[
       {title:"Enroll for our various online courses Anywhere from the World",us:"CONTACT US"}
     ]
-    openPopup() {
-      this.isPopupVisible = true;
-    }
+    // openPopup() {
+    //   this.isPopupVisible = true;
+    // }
 }

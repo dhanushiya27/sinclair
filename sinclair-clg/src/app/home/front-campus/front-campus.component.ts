@@ -13,5 +13,5 @@ export class FrontCampusComponent {
     {ImagePath:"assets/images/london.png",Heading:"LONDON" },
     {ImagePath:"assets/images/newyork.png",Heading:"NEW YORK" },
     {ImagePath:"assets/images/washington.png",Heading:"WASHINGTON" },
-]
+  ]
 }

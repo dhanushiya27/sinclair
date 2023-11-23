@@ -7,14 +7,20 @@
     background-color:#0c243c;
     font-family: "Poppins", sans-serif;
   }
+  .row {
+    margin-top: 2%;
+    margin-left: 10%;
+    margin-right: 7%;
+    // display: flex;
+    // justify-content: space-between;
+  }
   .card{
     width: 350px;
     border-radius:0%;
-    height: 400px;
+    height: 450px;
     background-color: #243f56;
     color: #fff;
     text-align: justify;
-    margin: 2%;
   }
   h1 {
     font-size: 26px;
@@ -32,7 +38,7 @@
    padding: 0%;
   }
   .card-image{
-  width: 350px;
+  width: 280px;
   height: 200px;
   }
   @media(max-width:700px){

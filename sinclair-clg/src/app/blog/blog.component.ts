@@ -38,7 +38,6 @@ export class BlogComponent {
   ngOnInit() {
     window.scroll(0,0);
   }
-
   onEdit(blogId: number) {
     this.router.navigate(["blogContent", blogId]);
   }

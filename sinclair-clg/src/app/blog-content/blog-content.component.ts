@@ -13,7 +13,7 @@ export class BlogContentComponent implements OnInit{
   blogId:any;  
   blog:any;
   constructor(private activatedRoute:ActivatedRoute){}
-  ngOnInit():void{
+  ngOnInit(){
     this.blogId=this.activatedRoute.snapshot.paramMap.get('id')
   }
   get selectedBlog() {
