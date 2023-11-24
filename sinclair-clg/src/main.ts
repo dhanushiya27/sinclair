@@ -10,6 +10,7 @@ import { SignupComponent } from './app/signup/signup.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BlogContentComponent } from './app/blog-content/blog-content.component';
 import { HomeComponent } from './app/home/home.component';
+import { RegisterDataComponent } from './app/course/register-data/register-data.component';
 bootstrapApplication(AppComponent, {
   providers:[importProvidersFrom(BrowserModule),
     importProvidersFrom(BrowserAnimationsModule),
@@ -18,6 +19,7 @@ bootstrapApplication(AppComponent, {
     {path:'about',component:AboutComponent},
     {path:'course',component:CourseComponent},
     { path: 'register', component: RegisterComponent },
+    { path: 'register-data', component: RegisterDataComponent },
     {path:'blog',component:BlogComponent},
     { path: 'blogContent/:id', component: BlogContentComponent },
     {path:'signup',component:SignupComponent}]

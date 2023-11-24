@@ -2,12 +2,13 @@
   <p-toast (onClose)="handleToastClose()"  [life]="100000"></p-toast>
  <div [ngClass]="{'overlay': overlayVisible}" class="overlay"></div> 
  <div class="container">
-   <h1>Enroll Your Course</h1>
+   <div><h1>Enroll Your Course<i class="fa-solid fa-arrow-right" (click)="navigateToRegisterData()"></i>
+   </h1></div>
    <p>We would love to provide these courses and help you succeed.Feel free to get in touch with us. </p>
    <div class="contact-box">
      <div class="contact-left">
        <h3>Enroll Your Course</h3>
-       <form id="idform" [formGroup]="form" (submit)="saveFormData()">
+        <form id="idform" [formGroup]="form" (submit)="saveFormData()">
          <div class="input-row">
            <div class="input-group">
              <label for="fname">First Name *</label>
@@ -83,7 +84,6 @@
          </div>
          <button type="submit"  class="button" [disabled]="form.invalid" *ngIf="!editForm" (click)="showSuccess()" >Enroll</button>
          <button type="button" (click)="saveEditedData()" *ngIf="editForm">Update</button>
-
        </form>
      </div>
      <div class="contact-right">
@@ -92,5 +92,5 @@
    </div>
  </div>
 </div> 
-<app-register-data [formData]="formValues" [courses]="courses" (removeItemFromParent)="removeItemFromChild($event)" (editItemEvent)="editItem($event)"></app-register-data>
+<!-- <app-register-data [formData]="formValues" [courses]="courses" (removeItemFromParent)="removeItemFromChild($event)" (editItemEvent)="editItem($event)"></app-register-data> -->
 <!-- formData  is referance variable -->

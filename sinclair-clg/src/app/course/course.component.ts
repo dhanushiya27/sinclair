@@ -21,6 +21,7 @@ export class CourseComponent {
   showDetails: boolean[] = [];
   searchQuery: string = '';
   filteredCourses: any[] = [];
+  SuccessMessageService: any;
 
   coursedata =[
     {
@@ -79,9 +80,9 @@ export class CourseComponent {
     },
 
   ] 
-    first: number = 0;
-    rows: number = 6;
-  SuccessMessageService: any;
+  first: number = 0;
+  rows: number = 6;
+   
     onPageChange(event: any) {
         this.first = event.first;
         this.rows = event.rows;
@@ -91,9 +92,15 @@ export class CourseComponent {
     this.filteredCourses = this.coursedata;
   }
   ngOnInit() {
+    this.likeService.cartCourses$.subscribe(cartCourses => {
+      console.log('Cart Courses:', cartCourses);
+    });
     window.scroll(0,0);
   }
-
+  addToCart(course: any) {
+    console.log('Adding to cart:', course);
+    this.likeService.addToCart(course);
+  }
 toggleDetails(index: number) {
   this.showDetails[index] = !this.showDetails[index];
 }

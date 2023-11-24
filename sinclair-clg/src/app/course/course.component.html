@@ -5,7 +5,6 @@
       <i class="fa-solid fa-magnifying-glass" id="search-icon"></i>
       <!-- any data val changes in html that is been read in ts is 2 way databinding -->
       <input type="text" placeholder="Search a course" [(ngModel)]="searchQuery" (input)="filterCourses()" />
-      <!-- <a class="hero-btn red-btn" (click)="onRegister()">REGISTER</a> -->
       <a routerLink="/register" class="hero-btn red-btn"> REGISTER</a>
      </div>
     </div>
@@ -24,6 +23,7 @@
        <button (click)="toggleDetails(i)" class="hero-btn red-btn" id="mybtn">
          {{ showDetails[i] ? 'Read Less' : 'Read More' }}
        </button>
+       <button class="hero-btn red-btn" id="mybtn" (click)="addToCart(course[i])">btn</button>
      </div>
     </div>
     <div class=".card.flex.justify-content-center">

@@ -17,5 +17,13 @@ export class SuccessMessageService {
   likeCourse(course: any) {
     course.numberoflikes += 1;
   }
+  private cartCoursesSource = new BehaviorSubject<any[]>([]);
+  cartCourses$ = this.cartCoursesSource.asObservable();
+
+  addToCart(course: any) {
+    const currentCartCourses = this.cartCoursesSource.value;
+    const updatedCartCourses = [...currentCartCourses, course];
+    this.cartCoursesSource.next(updatedCartCourses);
+  }
 }
 

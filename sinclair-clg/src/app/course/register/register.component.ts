@@ -6,12 +6,13 @@ import { ToastModule } from "primeng/toast";
 import { MultiSelectModule } from "primeng/multiselect";
 import { DropdownModule } from "primeng/dropdown";
 import { RegisterDataComponent } from '../register-data/register-data.component';
-import {  RouterModule, RouterOutlet } from '@angular/router';
+import { NavigationStart, RouterModule } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  providers:[MessageService],
+  providers:[MessageService ],
   imports: [CommonModule,RouterModule
   ,RegisterDataComponent ,FormsModule,ToastModule, DropdownModule,MultiSelectModule,ReactiveFormsModule,],
   templateUrl: './register.component.html',
@@ -38,8 +39,9 @@ export class RegisterComponent {
        {name:'Mathematics'}
   ];
   formValues: any[] = JSON.parse(localStorage.getItem('formValues') || '[]');//string to array
+ 
 
-  constructor(private fb: FormBuilder,private messageService: MessageService) {//formbuilder is for validation purpose
+  constructor(private router: Router, private fb: FormBuilder,private messageService: MessageService) {//formbuilder is for validation purpose
     this.form = this.fb.group({
             fname: ['', Validators.required],
             lname: ['', Validators.required],
@@ -68,6 +70,10 @@ export class RegisterComponent {
   handleToastClose(){
     this.overlayVisible = false; 
   }
+  navigateToRegisterData() {
+    console.log('Navigating to Register Data');
+    this.router.navigate(['/register-data']);
+  }
    removeItemFromChild(formValueRecieved:any){
     const index = this.formValues.indexOf(formValueRecieved);//array.indexof (obj)
     this.formValues.splice(index, 1);
@@ -79,9 +85,7 @@ export class RegisterComponent {
     this.selectedItem = updatedItem;
     this.form.patchValue(updatedItem); // Pre-fill the form with the selected item's data
   }
-  
-  // Add a saveEditedData method to save the edited data
-  saveEditedData() {
+    saveEditedData() {
     this.editForm = false;
     const index = this.formValues.indexOf(this.selectedItem);
     this.formValues[index] = this.form.value; //

@@ -19,14 +19,26 @@ export class RegisterDataComponent {
   @Output() editItemEvent = new EventEmitter<any>();
   selectedCourses: any;
   filteredDataLength: any;
+//   courses: any[] = [
+//     {name:'Astronomy'},
+//    {name:'Microbiology'},
+//    {name:'Hospitality Management'},
+//    {name:'Pathophysiology'},
+//    {name:'Africana Studies'},
+//    {name:'Accounting'},
+//    {name:'Visual Communications'},
+//    {name:'Mathematics and Engineering'},
+//    {name:'Law'},
+//    {name:'Mathematics'}
+// ];
   
   updateSelectedCourses(selectedCourses: any[]): void {
   this.selectedCourses = selectedCourses;
   this.calculateFilteredDataLength();
   }
-  removeItem(formValues:any){
-    this.removeItemFromParent.emit(formValues); 
-  }
+  // removeItem(formValues:any){
+  //   this.removeItemFromParent.emit(formValues); 
+  // }
   calculateFilteredDataLength() {
     this.filteredDataLength = this.formData.filter((item: any)=> {
       for (const course of this.selectedCourses) {
@@ -37,10 +49,10 @@ export class RegisterDataComponent {
       return false;
     });
   }
-  editItem(formValue: any) {
-    formValue.editing = true;
-    this.editItemEvent.emit(formValue);
-  }
+  // editItem(formValue: any) {
+  //   formValue.editing = true;
+  //   this.editItemEvent.emit(formValue);
+  // }
   // sortDataAlphabetically() {
   //   this.formData.sort((a: { fname: string }, b: { fname: string }) => a.fname.localeCompare(b.fname));
   // }

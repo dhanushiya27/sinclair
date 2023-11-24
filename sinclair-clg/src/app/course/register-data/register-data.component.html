@@ -1,14 +1,14 @@
 <div class="data">
     <div class="mb-3">
-       <span> <p-multiSelect class="coursedropdown" [options]="courses" formControlName="courses" optionLabel="name" (onChange)="updateSelectedCourses($event.value)" ></p-multiSelect></span>
-       <span class="result">Results:{{filteredDataLength?.length ?  filteredDataLength.length: formData.length}}</span>
+       <span> <p-multiSelect class="coursedropdown" formControlName="courses"  [options]="courses" optionLabel="name" ></p-multiSelect></span><!--(onChange)="updateSelectedCourses($event.value)"-->
+       <!-- <span class="result">Results:{{filteredDataLength?.length ?  filteredDataLength.length: formData.length}}</span>[options]="courses" -->
     </div>
     <div class="card">
       <div class="table-scroll">
-       <p-table  [value]="formData | filter: selectedCourses"   [scrollable]="true" [style]="{'width': '900px'}">
+       <p-table   [scrollable]="true" [style]="{'width': '900px'}"><!--[value]="formData | filter: selectedCourses" -->
         <ng-template pTemplate="header">
             <tr>
-                <th>First Name<i class="fa-solid fa-arrow-up" (click)="sortDataAlphabetically(true)"></i><i class="fa-solid fa-arrow-down" (click)="sortDataAlphabetically(false)"></i></th>
+              <!--(click)="sortDataAlphabetically(true)"-->  <th>First Name<i class="fa-solid fa-arrow-up" ></i><i class="fa-solid fa-arrow-down"></i></th><!-- (click)="sortDataAlphabetically(false)"-->
                 <th>Last Name</th>
                 <th>Std Id</th>
                 <th>Std Email</th>
@@ -32,8 +32,8 @@
                 </ul>
                 </td>
                 <td  [style]="{'width':'10%'}">
-                    <i class="fa-solid fa-pencil" disabled="formValue.editing"  (click)="editItem(formValue)"></i>
-                    <i class="fa-solid fa-xmark" (click)="removeItem(formValue)" ></i>
+                    <!-- <i class="fa-solid fa-pencil" disabled="formValue.editing"  (click)="editItem(formValue)"></i> -->
+                    <!-- <i class="fa-solid fa-xmark" (click)="removeItem(formValue)" ></i> -->
                  </td>
             </tr>
         </ng-template>
@@ -41,3 +41,4 @@
       </div>
     </div>
 </div> 
+
